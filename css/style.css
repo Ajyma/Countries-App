@@ -1,0 +1,220 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+}
+
+
+.lds-hourglass {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid #000;
+  border-color: #000 transparent #000 transparent;
+  animation: lds-hourglass 1.2s infinite;
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+
+
+.navbar{
+  background-color: crimson;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 0;
+}
+.navbar .el{
+  font-size: 28px;
+  font-weight: bold;
+}
+.navbarList a{
+  font-size: 20px;
+}
+.form, .navbarList{
+  display: flex;
+  transition: .3s;
+}
+.navbarList li a{
+  color: white;
+  margin: 0px 30px;
+  cursor: pointer;
+}
+.select{
+  color: crimson;
+  padding: 5%;
+  margin-right: 20px;
+}
+.search{
+  padding-left: 15px;
+  border: 1px solid black;
+}
+.search::placeholder{
+  padding: 5px;
+  color: crimson;
+}
+.sidebar{
+  display: flex;
+  align-items: center;
+}
+.navbarList.active{
+  right: 0;
+  flex-direction: column;
+  height: 50vh;
+  top: 1px;
+  padding: 2rem 1rem;
+  background-color: #444;
+}
+
+
+
+.row{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2%;
+}
+.card{
+  margin-top: 1rem;
+  width: 350px;
+  height: 270px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.card-image{
+  width: 220px;
+  height: 150px;
+}
+.card-image img{
+  width: 220px;
+  height: 150px;
+  object-fit: cover;
+}
+.btn-more{
+  background-color: crimson;
+  color: white;
+  margin-top: 1rem;
+  cursor: pointer;
+  padding: 10px 70px;
+  border-radius: 15px;
+  transition: .3s;
+}
+.btn-more:hover{
+  background-color: rgb(164, 21, 50);
+}
+.loader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+.bars{
+  width: 30px;
+  margin-top: 7px;
+  cursor: pointer;
+}
+.more span{
+  color: crimson;
+}
+.more button{
+  margin-left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  outline: none;
+  margin-top: 1rem;
+  background-color: crimson;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+
+
+
+.burger-menu{
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .navbarList{
+    position: fixed;
+    right: -100%;
+  }
+  .burger-menu{
+    display: block;
+  }
+  .card{
+    width: 300px;
+    height: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bars.active{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+  .bars{
+    margin-left: 8rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .form{
+    display: none;
+  }
+  .card{
+    width: 350px;
+    height: 270px;
+    margin-top: 6rem;
+  }
+  .card-image, .card-image img{
+    width: 340px;
+    height: 260px;
+  }
+  .navbarList{
+    right: 150%;
+  }
+}
+
+@media (max-width: 320px) {
+  .card{
+    width: 330px;
+    height: 240px;
+  }
+  .card-image, .card-image img{
+    width: 290px;
+    height: 230px;
+  }
+}
